@@ -1,4 +1,3 @@
-" Use strict";
 "use strict";
 let courses = [
   {
@@ -38,13 +37,36 @@ let courses = [
   },
 ];
 
-// When does the PROG 200 course start ?
-let prog200Course = courses.find((course) => course.CourseId === "PROG200");
-// directly finds the course objet with the courseID as PROG 200
-if (prog200Course !== undefined) {
-  console.log("PROG200 Start Date:", prog200Course.StartDate);
-} else {
-  console.log("Course not found.");
-}
+// Write code that searches the courses array using the find() or filter() functions
+// to determine: 
 
-//  What is the title of the PROJ500 Course
+// Q1 When does the PROG200 course start?  
+
+function prog200Course (course) { 
+  if (course.CourseId === "PROG200") {
+    return true 
+  } 
+}
+let course = courses.find( prog200Course) 
+console.log(" The start date for PROG200 is : " + course.StartDate)
+
+
+// Q2.  What is the title of the PROJ500 course? 
+ function proj500Course (course )  { 
+  if (course.ID === "PROJ500") { 
+    return true 
+  } 
+}
+    
+ let course2= courses.find( proj500Course)   
+ console.log ( "The Title of the PROJ500 course " + course.Title )
+
+
+
+//  What are the titles of the courses that cost $50 or less? 
+function cheapCourseTitles ( courses) {
+  return ( Number(courses.Fee) <= 50)
+   
+  }
+
+  
